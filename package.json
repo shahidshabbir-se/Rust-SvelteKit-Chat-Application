@@ -1,0 +1,34 @@
+{
+  "name": "Rust-SvelteKit-Chat-Application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clientDev": "cd client && pnpm run dev",
+    "server": "cd server && cargo run",
+    "dev": "concurrently \"pnpm run clientDev\" \"pnpm run server\"",
+    
+    "serverLint": "cd server && cargo clippy",
+    "clientLint": "cd client && pnpm run lint",
+    "lint": "concurrently \"pnpm run serverLint\" \"pnpm run clientLint\"",
+    
+    "serverFormat": "cd server && cargo fmt",
+    "clientFormat": "cd client && pnpm run format",
+    "format": "concurrently \"pnpm run serverFormat\" \"pnpm run clientFormat\"",
+    
+    "serverCheck": "cd server && cargo check",
+    "clientCheck": "cd client && pnpm run check",
+    "check": "concurrently \"pnpm run serverCheck\" \"pnpm run clientCheck\"",
+    
+    "clientBuild": "cd client && pnpm run build",
+    "serverBuild": "cd server && cargo build --release",
+    "build": "concurrently \"pnpm run clientBuild\" \"pnpm run serverBuild\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
+
